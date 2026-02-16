@@ -3,7 +3,7 @@
 by  MinSeo Park
 
 ### Introduction
-In the point-cloud-based place recognition area, the existing hybrid architectures combining both convolutional networks and transformers have shown promising performance. They mainly apply the voxel-wise transformer after the sparse convolution (SPConv). However, they can induce information loss by the sparse voxelization and further result in loss propagation to the transformer, significantly degrading the performance of the network, especially in outdoor scenes with complex geometric structures and multiple small objects. To address this issue, we propose a novel Point-wise Transformer with sparse Convolution (PTC). Specifically, SPConv is applied to the sparsely voxelized point cloud to extract local features, which are then converted to the point-based representation via a feature transformation unit (FTU). As such, our PTC can apply a transformer model based on the point-wise representation rather than on the voxel-wise one. To enhance the ability to capture long-range features and reduce the computational complexity of the transformer, we propose a two-step transformer, each with different grouping strategies. Meanwhile, in both steps, the attention matrix is computed with much fewer points by grouping a single point cloud into different attention domains. The experiments show that the PTC-Net can achieve state-of-the-art (SOTA) performance, with an improvement of 3.6\% on average recall@1. Furthermore, to demonstrate the effectiveness of the PTC, we introduce an extremely light-weight version, PTC-Net-L, with only one PTC layer and half initial channel dimensions, also achieving SOTA performance in terms of the average recall rate and running time with only 0.08M parameters.
+We present DPA-Net, a lightweight yet highly dis- criminative LiDAR place recognition network that combines sparse 3D convolution with deformable point-based attention. Unlike conventional voxel-based architectures that suffer from in- formation loss during quantization, DPA-Net reconstructs dense point features through an interpolation module and applies Deformable Point Attention (DPA) to adaptively aggregate ge- ometric structures. The proposed attention mechanism predicts position-aware offsets, samples local key–value features through a single 3-NN interpolation step, and incorporates relative posi- tional encoding to enhance spatial sensitivity while maintaining computational efficiency. A top-down feature propagation module further refines point-wise features by injecting high-level con- textual information back to the original point distribution. A Weighted Generalized Mean Pooling aggregates the refined point features into a global descriptor for retrieval. Experiments con- firm that DPA-Net achieves competitive performance compared to existing point-based and voxel-based LiDAR place recognition methods.
 
 ![Overview](media/Overview.jpg)
 
@@ -87,26 +87,4 @@ Note that our training code refers to MinkLoc3Dv2. For more details of the train
     python pnv_evaluate.py --config ../config/config_refined.txt --model_config ../models/config_model.txt --weights ../weights/*.pth
     ```
 
-### Citation
 
-If you find this work useful, please consider citing:
-
-    @ARTICLE{10103149,
-      author={Chen, Lineng and Wang, Huan and Kong, Hui and Yang, Wankou and Ren, Mingwu},
-      journal={IEEE Robotics and Automation Letters}, 
-      title={PTC-Net: Point-Wise Transformer With Sparse Convolution Network for Place Recognition}, 
-      year={2023},
-      volume={8},
-      number={6},
-      pages={3414-3421},
-      doi={10.1109/LRA.2023.3267693}}
-
-### License
-Our code is released under the MIT License (see LICENSE file for details).
-
-#### Acknowledgement
-
-Our code refers to 
-[PointNetVLAD](https://github.com/mikacuy/pointnetvlad), 
-[MinkLoc3Dv2](https://github.com/jac99/MinkLoc3Dv2) 
-and [PPT-Net](https://github.com/fpthink/PPT-Net).
