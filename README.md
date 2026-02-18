@@ -5,37 +5,37 @@ by  MinSeo Park
 ### Abstract
 We present DPA-Net, a lightweight yet highly dis- criminative LiDAR place recognition network that combines sparse 3D convolution with deformable point-based attention. Unlike conventional voxel-based architectures that suffer from in- formation loss during quantization, DPA-Net reconstructs dense point features through an interpolation module and applies Deformable Point Attention (DPA) to adaptively aggregate ge- ometric structures. The proposed attention mechanism predicts position-aware offsets, samples local key–value features through a single 3-NN interpolation step, and incorporates relative posi- tional encoding to enhance spatial sensitivity while maintaining computational efficiency. A top-down feature propagation module further refines point-wise features by injecting high-level con- textual information back to the original point distribution. A Weighted Generalized Mean Pooling aggregates the refined point features into a global descriptor for retrieval. Experiments con- firm that DPA-Net achieves competitive performance compared to existing point-based and voxel-based LiDAR place recognition methods.
 
-![Overview](media/Overview.jpg)
+![Overview](media/Overview.png)
 
-### 🏙 Oxford & In-house (Baseline Setting)
+### Oxford & In-house (Baseline Setting)
 <p align="center">
   <img src="media/Results1.png" width="85%">
 </p>
 
 ---
 
-### 🌆 Refined Setting
+### Refined Setting
 <p align="center">
   <img src="media/Results2.png" width="85%">
 </p>
 
 ---
 
-### 🛣 MulRan Benchmark
+### MulRan Benchmark
 <p align="center">
   <img src="media/Results3.png" width="75%">
 </p>
 
 ---
 
-### 🚗 RoboLoc Benchmark
+### RoboLoc Benchmark
 <p align="center">
   <img src="media/Results4.png" width="70%">
 </p>
 
 ---
 
-### ⚡ Model Efficiency
+### Model Efficiency
 <p align="center">
   <img src="media/parameters.png" width="55%">
 </p>
