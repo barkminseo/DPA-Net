@@ -31,43 +31,25 @@ We present DPA-Net, a lightweight yet highly dis- criminative LiDAR place recogn
 ![Efficiency](media/parameters.png)
 
 ### Datasets
+dataset can be downloaded here:
+
+🔗 [Download Dataset (Google Drive)](링크)
+
 * Oxford dataset
 * NUS (in-house) Datasets
   * university sector (U.S.)
   * residential area (R.A.)
   * business district (B.D.)
-
-Following [PointNetVLAD](https://arxiv.org/abs/1804.03492) the datasets can be downloaded [here](https://drive.google.com/open?id=1H9Ep76l8KkUpwILY-13owsEMbVCYTmyx).
-Run the below code to generate pickles with positive and negative point clouds for each anchor point cloud. 
-
-```generate pickles
-cd generating_queries/ 
-
-# Generate training tuples for the Baseline Dataset
-python generate_training_tuples_baseline.py --dataset_root <dataset_root_path>
-
-# Generate training tuples for the Refined Dataset
-python generate_training_tuples_refine.py --dataset_root <dataset_root_path>
-
-# Generate evaluation tuples
-python generate_test_sets.py --dataset_root <dataset_root_path>
-```
-`<dataset_root_path>` is a path to dataset root folder, e.g. `/data/pointnetvlad/benchmark_datasets/`.
-Before running the code, ensure you have read/write rights to `<dataset_root_path>`, as training and evaluation pickles
-are saved there. 
-
-### Environment and Dependencies
-Our code was tested using Python 3.8.12 with PyTorch 1.10.2 and MinkowskiEngine 0.5.4 on Ubuntu 18.04 with CUDA 10.2.
-
-The following Python packages are required:
-* PyTorch (version 1.10.1)
-* [MinkowskiEngine](https://github.com/NVIDIA/MinkowskiEngine) (version 0.5.4)
-* pytorch_metric_learning (version 1.1 or above)
-* pandas
-* tqdm
-
+* Mulran dataset
+* roboloc dataset
 
 ### Training and Evaluation
-Note that our training code refers to MinkLoc3Dv2. For more details of the training code please refer to [here](https://github.com/jac99/MinkLoc3Dv2).
+Note that our training code refers to PTCnet. For more details of the training code please refer to [here](https://github.com/LeegoChen/PTC-Net).
 
+For training and evaluation on the **RoboLoc dataset**, please replace the default dataset loader with:
+
+- `base_datasets_ajou.py`
+- `pnv_raw_ajou.py`
+
+These files contain the dataset configuration and loading pipeline adapted for the RoboLoc benchmark.
 
