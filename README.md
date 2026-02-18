@@ -71,3 +71,10 @@ For training and evaluation on the **RoboLoc dataset**, please replace the defau
 
 These files contain the dataset configuration and loading pipeline adapted for the RoboLoc benchmark.
 
+#### Acknowledgement
+
+Our code refers to
+[PTCnet](https://github.com/LeegoChen/PTC-Net),
+[PointNetVLAD](https://github.com/mikacuy/pointnetvlad), 
+[MinkLoc3Dv2](https://github.com/jac99/MinkLoc3Dv2) 
+and [PPT-Net](https://github.com/fpthink/PPT-Net).
