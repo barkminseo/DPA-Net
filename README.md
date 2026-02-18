@@ -33,7 +33,7 @@ We present DPA-Net, a lightweight yet highly dis- criminative LiDAR place recogn
 ### Datasets
 dataset can be downloaded here:
 
-🔗 [Download Dataset (Google Drive)](링크)
+🔗 [Download Dataset (Google Drive)](https://drive.google.com/file/d/1oEZM8DefCMjBRvc2wc_GnhBF33iQ6PNw/view?usp=sharing)
 
 * Oxford dataset
 * NUS (in-house) Datasets
@@ -42,6 +42,24 @@ dataset can be downloaded here:
   * business district (B.D.)
 * Mulran dataset
 * roboloc dataset
+Following [PointNetVLAD](https://arxiv.org/abs/1804.03492) the datasets can be downloaded [here](https://drive.google.com/open?id=1H9Ep76l8KkUpwILY-13owsEMbVCYTmyx).
+Run the below code to generate pickles with positive and negative point clouds for each anchor point cloud. 
+
+```generate pickles
+cd generating_queries/ 
+
+# Generate training tuples for the Baseline Dataset
+python generate_training_tuples_baseline.py --dataset_root <dataset_root_path>
+
+# Generate training tuples for the Refined Dataset
+python generate_training_tuples_refine.py --dataset_root <dataset_root_path>
+
+# Generate evaluation tuples
+python generate_test_sets.py --dataset_root <dataset_root_path>
+```
+`<dataset_root_path>` is a path to dataset root folder, e.g. `/data/pointnetvlad/benchmark_datasets/`.
+Before running the code, ensure you have read/write rights to `<dataset_root_path>`, as training and evaluation pickles
+are saved there. 
 
 ### Training and Evaluation
 Note that our training code refers to PTCnet. For more details of the training code please refer to [here](https://github.com/LeegoChen/PTC-Net).
