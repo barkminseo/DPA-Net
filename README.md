@@ -70,39 +70,4 @@ The following Python packages are required:
 ### Training and Evaluation
 Note that our training code refers to MinkLoc3Dv2. For more details of the training code please refer to [here](https://github.com/jac99/MinkLoc3Dv2).
 
-* Modify the `PYTHONPATH` environment variable to include absolute path to the project root folder: 
-    ```
-    export PYTHONPATH=$PYTHONPATH:/home/.../PTC-Net-main
-    ```
-
-* build the pointops
-
-  ```
-  cd libs/pointops && python setup.py install && cd ../../
-  ```
-  
-* Train the network
-
-    ```
-    cd training
-    
-    # To train model on the Baseline Dataset
-    python train.py --config ../config/config_baseline.txt --model_config ../models/config_model.txt
-    
-    # To train model on the Refined Dataset
-    python train.py --config ../config/config_refined.txt --model_config ../models/config_model.txt
-    ```
-
-* Evaluate the network
-
-    ```eval baseline
-    cd eval
-    
-    # To evaluate the model trained on the Baseline Dataset
-    python pnv_evaluate.py --config ../config/config_baseline.txt --model_config ../models/config_model.txt --weights ../weights/*.pth
-    
-    # To evaluate the model trained on the Refined Dataset
-    python pnv_evaluate.py --config ../config/config_refined.txt --model_config ../models/config_model.txt --weights ../weights/*.pth
-    ```
-
 
