@@ -7,13 +7,38 @@ We present DPA-Net, a lightweight yet highly dis- criminative LiDAR place recogn
 
 ![Overview](media/Overview.jpg)
 
-## Main Results
-![Results](media/Results1.png)
-![Results](media/Results2.png)
-![Results](media/Results3.png)
-![Results](media/Results4.png)
+### 🏙 Oxford & In-house (Baseline Setting)
+<p align="center">
+  <img src="media/Results1.png" width="85%">
+</p>
 
-![Results](media/parameters.png)
+---
+
+### 🌆 Refined Setting
+<p align="center">
+  <img src="media/Results2.png" width="85%">
+</p>
+
+---
+
+### 🛣 MulRan Benchmark
+<p align="center">
+  <img src="media/Results3.png" width="75%">
+</p>
+
+---
+
+### 🚗 RoboLoc Benchmark
+<p align="center">
+  <img src="media/Results4.png" width="70%">
+</p>
+
+---
+
+### ⚡ Model Efficiency
+<p align="center">
+  <img src="media/parameters.png" width="55%">
+</p>
 
 ### Datasets
 * Oxford dataset
