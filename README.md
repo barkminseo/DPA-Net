@@ -8,7 +8,10 @@ We present DPA-Net, a lightweight yet highly dis- criminative LiDAR place recogn
 ![Overview](media/Overview.jpg)
 
 ## Main Results
-![Results](media/Results.png)
+![Results](media/Results1.png)
+![Results](media/Results2.png)
+![Results](media/Results3.png)
+![Results](media/Results4.png)
 
 ![Results](media/parameters.png)
 
