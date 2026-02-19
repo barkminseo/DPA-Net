@@ -31,7 +31,7 @@ We present DPA-Net, a lightweight yet highly dis- criminative LiDAR place recogn
 ![Efficiency](media/parameters.png)
 
 ### Datasets
-dataset can be downloaded here:
+mulran and roboloc datasets can be downloaded here:
 
 🔗 [Download Dataset (Google Drive)](https://drive.google.com/file/d/1oEZM8DefCMjBRvc2wc_GnhBF33iQ6PNw/view?usp=sharing)
 
@@ -42,6 +42,7 @@ dataset can be downloaded here:
   * business district (B.D.)
 * Mulran dataset
 * roboloc dataset
+
 Following [PointNetVLAD](https://arxiv.org/abs/1804.03492) the datasets can be downloaded [here](https://drive.google.com/open?id=1H9Ep76l8KkUpwILY-13owsEMbVCYTmyx).
 Run the below code to generate pickles with positive and negative point clouds for each anchor point cloud. 
 
