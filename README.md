@@ -62,7 +62,7 @@ wd = world distance (meters)
 
 ![Failure Example 1](media/oxford_m0_n1_q101_fail.png)
 
-![Failure Example 2](media/failure/oxford_m0_n2_q82_fail.png)
+![Failure Example 2](media/oxford_m0_n2_q82_fail.png)
 
 ---
 
