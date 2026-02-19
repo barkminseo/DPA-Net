@@ -41,7 +41,7 @@ The bold and underlined values indicate the best and second best results, respec
 # Retrieval Visualization
 
 We provide representative successful and failure retrieval cases
-in baseline datasets
+produced by **our DPA-based model** on the baseline datasets.
 
 Each figure contains:
 - Left: Query scan
