@@ -68,7 +68,35 @@ wd = world distance (meters)
 ![Failure Example 2](media/oxford_m0_n2_q82_fail.png)
 
 ---
+# DPA (Ours) vs Fixed kNN Attention Comparison
 
+To further analyze the effect of deformable point attention,
+we compare retrieval results between:
+
+- **DPA (Ours)**
+- **Fixed kNN Attention**
+
+Each comparison uses the same query scan.
+
+---
+
+## Failure Case Comparison
+
+### Case 1 – Long-range False Positive
+
+| DPA (Ours) | Fixed kNN Attention |
+|------------|--------------------|
+| ![](media/dpa_oxford_q101_fail.png) | ![](media/knn_oxford_q101_fail.png) |
+
+---
+
+### Case 2 – Structural Ambiguity
+
+| DPA (Ours) | Fixed kNN Attention |
+|------------|--------------------|
+| ![](media/dpa_oxford_q82_fail.png) | ![](media/knn_oxford_q82_fail.png) |
+
+---
 
 
 
