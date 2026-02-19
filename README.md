@@ -34,6 +34,41 @@ We present DPA-Net, a lightweight yet highly dis- criminative LiDAR place recogn
 Ablation study on different interpolation schemes in the DPA module. Inverse-distance weighting achieves the best performance compared to uniform and Gaussian weighting. The bold and underlined values indicate the best and second best results, respectively.
 ![Ablation](media/Ablation1.png)
 
+
+# Retrieval Visualization (Reviewer #7.6 Supplementary)
+
+We provide representative successful and failure retrieval cases
+to improve transparency as requested by the reviewer.
+
+Each figure contains:
+- Left: Query scan
+- Middle: Top-1 retrieval result
+- Right: Closest true positive (TP)
+
+d = embedding distance  
+wd = world distance (meters)
+
+---
+
+## Successful Retrieval Examples
+
+![Success Example 1](media/oxford_m0_n1_q5_succ.png)
+
+![Success Example 2](media/oxford_m0_n1_q6_succ.png)
+
+---
+
+## Failure Retrieval Examples
+
+![Failure Example 1](media/oxford_m0_n1_q101_fail.png)
+
+![Failure Example 2](media/failure/oxford_m0_n2_q82_fail.png)
+
+---
+
+
+
+
 ### Datasets
 mulran and roboloc datasets can be downloaded here:
 
