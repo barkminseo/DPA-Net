@@ -35,7 +35,7 @@ Ablation study on different interpolation schemes in the DPA module. Inverse-dis
 ![Ablation](media/Ablation1.png)
 
 
-# Retrieval Visualization (Reviewer #7.6 Supplementary)
+# Retrieval Visualization
 
 We provide representative successful and failure retrieval cases
 to improve transparency as requested by the reviewer.
