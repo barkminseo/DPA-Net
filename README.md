@@ -31,7 +31,10 @@ We present DPA-Net, a lightweight yet highly dis- criminative LiDAR place recogn
 ![Efficiency](media/parameters.png)
 
 ### Ablation Study
-Ablation study on different interpolation schemes in the DPA module. Inverse-distance weighting achieves the best performance compared to uniform and Gaussian weighting. The bold and underlined values indicate the best and second best results, respectively.
+Ablation study on different interpolation schemes in the DPA module. 
+Inverse-distance weighting achieves the best performance compared to uniform and Gaussian weighting. 
+The bold and underlined values indicate the best and second best results, respectively.
+
 ![Ablation](media/Ablation1.png)
 
 
