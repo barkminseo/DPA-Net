@@ -30,6 +30,9 @@ We present DPA-Net, a lightweight yet highly dis- criminative LiDAR place recogn
 ### Model Efficiency
 ![Efficiency](media/parameters.png)
 
+### Ablation Study
+![Ablation](media/Ablation1.png)
+
 ### Datasets
 mulran and roboloc datasets can be downloaded here:
 
