@@ -38,7 +38,7 @@ Ablation study on different interpolation schemes in the DPA module. Inverse-dis
 # Retrieval Visualization
 
 We provide representative successful and failure retrieval cases
-to improve transparency as requested by the reviewer.
+in baseline datasets
 
 Each figure contains:
 - Left: Query scan
