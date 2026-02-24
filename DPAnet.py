@@ -321,7 +321,7 @@ class WGeM(nn.Module):
         return x
 
 
-class DPA_Net(nn.Module):
+class SBC_Net(nn.Module):
     def __init__(self, params_mink):
         super().__init__()
 
@@ -419,3 +419,4 @@ class DPA_Net(nn.Module):
         out = self.Gem(feats_t).squeeze(-1)
 
         return {"global": out}
+
