@@ -37,6 +37,11 @@ The bold and underlined values indicate the best and second best results, respec
 
 ![Ablation](media/Ablation1.png)
 
+Sensitivity analysis of key hyperparameters.
+Recall@1 (%) is reported on baseline datasets.
+Bold black, blue indicate the first and the second best performance.
+
+![Ablation](media/parameter.png)
 
 # Retrieval Visualization
 
