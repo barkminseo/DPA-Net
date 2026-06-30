@@ -1,77 +1,113 @@
-# DPA-net: Deformable-Point-Attention-for-LiDAR-Place-Recognition-with-Weighted-GeM-Aggregation
+# DPA-Net: Deformable Point Attention for LiDAR Place Recognition With Weighted GeM Aggregation
 
-by  MinSeo Park
+**Minseo Park, JungWoo Kim, Jaejin Jeon, DoHyeong Kwon, SangHyun Lee, and Soomok Lee**
 
+[![IEEE RA-L](https://img.shields.io/badge/IEEE%20RA--L-2026-blue)](https://ieeexplore.ieee.org/abstract/document/11495515)
+[![DOI](https://img.shields.io/badge/DOI-10.1109%2FLRA.2026.3688389-blue)](https://doi.org/10.1109/LRA.2026.3688389)
 
+Official implementation of  
+**Deformable Point Attention for LiDAR Place Recognition With Weighted GeM Aggregation**,  
+published in **IEEE Robotics and Automation Letters (RA-L), 2026**.
 
-@ARTICLE{11495515,
-  author={Park, Minseo and Kim, JungWoo and Jeon, Jaejin and Kwon, DoHyeong and Lee, SangHyun and Lee, Soomok},
-  journal={IEEE Robotics and Automation Letters}, 
-  title={Deformable Point Attention for LiDAR Place Recognition With Weighted GeM Aggregation}, 
-  year={2026},
-  volume={11},
-  number={6},
-  pages={7540-7547},
-  keywords={Feeds;Antennas;Filtering;Filters;Location awareness;Media Access Control;Radio access networks;Regional area networks;Protocols;Mobile communication;Point place recognition;3D sparse convolution},
-  doi={10.1109/LRA.2026.3688389}}
+📄 **Paper:** [IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/11495515)  
+🔗 **DOI:** [10.1109/LRA.2026.3688389](https://doi.org/10.1109/LRA.2026.3688389)
 
-### Abstract
-We present DPA-Net, a lightweight yet highly dis- criminative LiDAR place recognition network that combines sparse 3D convolution with deformable point-based attention. Unlike conventional voxel-based architectures that suffer from in- formation loss during quantization, DPA-Net reconstructs dense point features through an interpolation module and applies Deformable Point Attention (DPA) to adaptively aggregate ge- ometric structures. The proposed attention mechanism predicts position-aware offsets, samples local key–value features through a single 3-NN interpolation step, and incorporates relative posi- tional encoding to enhance spatial sensitivity while maintaining computational efficiency. A top-down feature propagation module further refines point-wise features by injecting high-level con- textual information back to the original point distribution. A Weighted Generalized Mean Pooling aggregates the refined point features into a global descriptor for retrieval. Experiments con- firm that DPA-Net achieves competitive performance compared to existing point-based and voxel-based LiDAR place recognition methods.
+---
+
+## News
+
+- **[2026.06]** DPA-Net has been published in **IEEE Robotics and Automation Letters (RA-L)**.
+
+---
+
+## Abstract
+
+We present **DPA-Net**, a lightweight yet highly discriminative LiDAR place recognition network that combines sparse 3D convolution with deformable point-based attention. Unlike conventional voxel-based architectures that suffer from information loss during quantization, DPA-Net reconstructs dense point features through an interpolation module and applies **Deformable Point Attention (DPA)** to adaptively aggregate geometric structures.
+
+The proposed attention mechanism predicts position-aware offsets, samples local key–value features through a single 3-NN interpolation step, and incorporates relative positional encoding to enhance spatial sensitivity while maintaining computational efficiency. A top-down feature propagation module further refines point-wise features by injecting high-level contextual information back to the original point distribution. Finally, **Weighted Generalized Mean Pooling** aggregates the refined point features into a global descriptor for retrieval.
+
+Experiments confirm that DPA-Net achieves competitive performance compared to existing point-based and voxel-based LiDAR place recognition methods.
+
+---
+
+## Overview
 
 ![Overview](media/Overview.png)
 
-### Oxford & In-house (Baseline Setting)
+---
+
+## Results
+
+### Oxford & In-house Benchmark — Baseline Setting
+
 ![Oxford Results](media/Results1.png)
 
 ---
 
-### Refined Setting
+### Oxford & In-house Benchmark — Refined Setting
+
 ![Refined Results](media/Results2.png)
 
 ---
 
 ### MulRan Benchmark
+
 ![MulRan Results](media/Results3.png)
 
 ---
 
 ### RoboLoc Benchmark
+
 ![RoboLoc Results](media/Results4.png)
 
 ---
 
-### Model Efficiency
+## Model Efficiency
+
 ![Efficiency](media/parameters.png)
-
-### Ablation Study
-Ablation study on different interpolation schemes in the DPA module. 
-Inverse-distance weighting achieves the best performance compared to uniform and Gaussian weighting. 
-The bold and underlined values indicate the best and second best results, respectively.
-
-![Ablation](media/Ablation1.png)
-
-Sensitivity analysis of key hyperparameters.
-Recall@1 (%) is reported on baseline datasets.
-Bold black, blue indicate the first and the second best performance.
-
-![Ablation](media/parameter.png)
-
-# Retrieval Visualization
-
-We provide representative successful and failure retrieval cases
-produced by **our DPA-based model** on the baseline datasets.
-
-Each figure contains:
-- Left: Query scan
-- Middle: Top-1 retrieval result
-- Right: Closest true positive (TP)
-
-d = embedding distance  
-wd = world distance (meters)
 
 ---
 
-## Successful Retrieval Examples
+## Ablation Study
+
+### Interpolation Scheme in the DPA Module
+
+Ablation study on different interpolation schemes in the DPA module.  
+Inverse-distance weighting achieves the best performance compared to uniform and Gaussian weighting.  
+The bold and underlined values indicate the best and second-best results, respectively.
+
+![Ablation](media/Ablation1.png)
+
+---
+
+### Hyperparameter Sensitivity
+
+Sensitivity analysis of key hyperparameters.  
+Recall@1 (%) is reported on the baseline datasets.  
+Bold black and blue indicate the best and second-best performance, respectively.
+
+![Ablation](media/parameter.png)
+
+---
+
+## Retrieval Visualization
+
+We provide representative successful and failure retrieval cases produced by **our DPA-based model** on the baseline datasets.
+
+Each figure contains:
+
+- **Left:** Query scan
+- **Middle:** Top-1 retrieval result
+- **Right:** Closest true positive (TP)
+
+where:
+
+- **d:** embedding distance
+- **wd:** world distance in meters
+
+---
+
+### Successful Retrieval Examples
 
 ![Success Example 1](media/oxford_m0_n1_q5_succ.png)
 
@@ -79,14 +115,15 @@ wd = world distance (meters)
 
 ---
 
-## Failure Retrieval Examples
+### Failure Retrieval Examples
 
 ![Failure Example 1](media/oxford_m0_n1_q101_fail.png)
 
 ![Failure Example 2](media/oxford_m0_n2_q82_fail.png)
 
 ---
-# DPA (Ours) vs Fixed kNN Attention Comparison
+
+## DPA vs. Fixed kNN Attention Comparison
 
 We compare retrieval results between:
 
@@ -97,50 +134,52 @@ Each comparison uses the same query scan.
 
 ---
 
-## Case 1 – Query q15
+### Case 1 — Query q15
 
 | DPA (Ours) | Fixed kNN Attention |
-|------------|--------------------|
+|------------|---------------------|
 | ![](media/oxford_m0_n1_q15_succ.png) | ![](media/oxford_m0_n1_q15_fail.png) |
 
 ---
 
-## Case 2 – Query q40
+### Case 2 — Query q40
 
 | DPA (Ours) | Fixed kNN Attention |
-|------------|--------------------|
+|------------|---------------------|
 | ![](media/oxford_m0_n1_q40_succ.png) | ![](media/oxford_m0_n1_q40_fail.png) |
 
 ---
 
-## Case 3 – Query q67
+### Case 3 — Query q67
 
 | DPA (Ours) | Fixed kNN Attention |
-|------------|--------------------|
+|------------|---------------------|
 | ![](media/oxford_m0_n1_q67_succ.png) | ![](media/oxford_m0_n1_q67_fail.png) |
 
 ---
 
+## Datasets
 
+The MulRan and RoboLoc datasets can be downloaded here:
 
-### Datasets
-mulran and roboloc datasets can be downloaded here:
+🔗 [Download Dataset — Google Drive](https://drive.google.com/file/d/1oEZM8DefCMjBRvc2wc_GnhBF33iQ6PNw/view?usp=sharing)
 
-🔗 [Download Dataset (Google Drive)](https://drive.google.com/file/d/1oEZM8DefCMjBRvc2wc_GnhBF33iQ6PNw/view?usp=sharing)
+We use the following datasets:
 
-* Oxford dataset
-* NUS (in-house) Datasets
-  * university sector (U.S.)
-  * residential area (R.A.)
-  * business district (B.D.)
-* Mulran dataset
-* roboloc dataset
+- Oxford dataset
+- NUS in-house datasets
+  - University sector (U.S.)
+  - Residential area (R.A.)
+  - Business district (B.D.)
+- MulRan dataset
+- RoboLoc dataset
 
-Following [PointNetVLAD](https://arxiv.org/abs/1804.03492) the datasets can be downloaded [here](https://drive.google.com/open?id=1H9Ep76l8KkUpwILY-13owsEMbVCYTmyx).
-Run the below code to generate pickles with positive and negative point clouds for each anchor point cloud. 
+Following [PointNetVLAD](https://arxiv.org/abs/1804.03492), the Oxford and NUS in-house datasets can be downloaded [here](https://drive.google.com/open?id=1H9Ep76l8KkUpwILY-13owsEMbVCYTmyx).
 
-```generate pickles
-cd generating_queries/ 
+To generate training and evaluation pickles with positive and negative point clouds for each anchor point cloud, run:
+
+```bash
+cd generating_queries/
 
 # Generate training tuples for the Baseline Dataset
 python generate_training_tuples_baseline.py --dataset_root <dataset_root_path>
@@ -151,12 +190,21 @@ python generate_training_tuples_refine.py --dataset_root <dataset_root_path>
 # Generate evaluation tuples
 python generate_test_sets.py --dataset_root <dataset_root_path>
 ```
-`<dataset_root_path>` is a path to dataset root folder, e.g. `/data/pointnetvlad/benchmark_datasets/`.
-Before running the code, ensure you have read/write rights to `<dataset_root_path>`, as training and evaluation pickles
-are saved there. 
 
-### Training and Evaluation
-Note that our training code refers to PTCnet. For more details of the training code please refer to [here](https://github.com/LeegoChen/PTC-Net).
+`<dataset_root_path>` is the path to the dataset root folder, for example:
+
+```bash
+/data/pointnetvlad/benchmark_datasets/
+```
+
+Before running the code, make sure you have read/write permission for `<dataset_root_path>`, since the training and evaluation pickle files will be saved there.
+
+---
+
+## Training and Evaluation
+
+Our training code refers to **PTC-Net**.  
+For more details about the training code, please refer to the official [PTC-Net repository](https://github.com/LeegoChen/PTC-Net).
 
 For training and evaluation on the **RoboLoc dataset**, please replace the default dataset loader with:
 
@@ -165,10 +213,35 @@ For training and evaluation on the **RoboLoc dataset**, please replace the defau
 
 These files contain the dataset configuration and loading pipeline adapted for the RoboLoc benchmark.
 
-#### Acknowledgement
+---
 
-Our code refers to
-[PTCnet](https://github.com/LeegoChen/PTC-Net),
-[PointNetVLAD](https://github.com/mikacuy/pointnetvlad), 
-[MinkLoc3Dv2](https://github.com/jac99/MinkLoc3Dv2) 
-and [PPT-Net](https://github.com/fpthink/PPT-Net).
+## Citation
+
+If you find this work useful for your research, please consider citing:
+
+```bibtex
+@ARTICLE{11495515,
+  author={Park, Minseo and Kim, JungWoo and Jeon, Jaejin and Kwon, DoHyeong and Lee, SangHyun and Lee, Soomok},
+  journal={IEEE Robotics and Automation Letters},
+  title={Deformable Point Attention for LiDAR Place Recognition With Weighted GeM Aggregation},
+  year={2026},
+  volume={11},
+  number={6},
+  pages={7540-7547},
+  keywords={Feeds;Antennas;Filtering;Filters;Location awareness;Media Access Control;Radio access networks;Regional area networks;Protocols;Mobile communication;Point place recognition;3D sparse convolution},
+  doi={10.1109/LRA.2026.3688389}
+}
+```
+
+---
+
+## Acknowledgement
+
+Our code refers to the following repositories:
+
+- [PTC-Net](https://github.com/LeegoChen/PTC-Net)
+- [PointNetVLAD](https://github.com/mikacuy/pointnetvlad)
+- [MinkLoc3Dv2](https://github.com/jac99/MinkLoc3Dv2)
+- [PPT-Net](https://github.com/fpthink/PPT-Net)
+
+We sincerely thank the authors for their excellent work.
