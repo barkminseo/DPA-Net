@@ -16,7 +16,7 @@ published in **IEEE Robotics and Automation Letters (RA-L), 2026**.
 
 ## News
 
-- **[2026.06]** DPA-Net has been published in **IEEE Robotics and Automation Letters (RA-L)**.
+- **[2026.04.28]** DPA-Net has been published in **IEEE Robotics and Automation Letters (RA-L)**.
 
 ---
 
